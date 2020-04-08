@@ -1,0 +1,6 @@
+classes= 1
+train=E:/Car-counting/datasets/cars 1/train.txt
+train=E:/Car-counting/datasets/cars 1/val.txt
+train=E:/Car-counting/datasets/cars 1/classes.names
+backup=backup/
+eval=coco

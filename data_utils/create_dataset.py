@@ -69,9 +69,9 @@ def process_sample(img_path, xml_path, index, classes, type='default'):
     else:
         xml_labels = []
 
+    (h, w) = img.shape[:2]
+    old_dims = [w, h]
     if opt.resolution != [0,0]:
-        (h, w) = img.shape[:2]
-        old_dims = [w, h]
         scale, offset = image_utils.get_scale_val(old_dims, opt.resolution, opt.keep_ar)
         img = image_utils.resize_image(img, opt.resolution, scale, offset)
         xml_labels = image_utils.scale_xml_labels(xml_labels, scale, offset)
@@ -188,9 +188,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--test_p', type=float, default=0.2, help='precent of images to test set')
     parser.add_argument('--single_cls', action='store_false', help='merge all classes into "_object_"')
-    parser.add_argument('--resolution', nargs='+', type=int, default=[640, 360], help='resolution of images. [0,0] for original')
+    parser.add_argument('--resolution', nargs='+', type=int, default=[0, 0], help='resolution of images. [0,0] for original')
     parser.add_argument('--keep_ar', action='store_false', help='keep aspect ratio when resize images')
-    parser.add_argument('--root', type=str, default='E:/Car-counting/datasets/cars 1/', help='path to dataset')
+    parser.add_argument('--root', type=str, default='E:/Car-counting/datasets/valid/', help='path to dataset')
     opt = parser.parse_args()
     print(opt)
 

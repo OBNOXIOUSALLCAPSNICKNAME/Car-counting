@@ -1,0 +1,13 @@
+*.jpg
+*.txt
+*.png
+*.xml
+*.mp4
+*.jpeg
+weights/*
+input/*
+output/*
+
+!weights/git.keep
+!input/git.keep
+!output/git.keep

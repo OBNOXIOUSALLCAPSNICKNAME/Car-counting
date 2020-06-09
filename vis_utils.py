@@ -194,12 +194,13 @@ def visualize_mask(image, face_landmarks, padding):
 def visualize_tracks(image, tracks):
     for track in tracks:
         xmin, ymin, xmax, ymax = track[2]
-        cx, cy = track[4][0]
-        rgb = ImageColor.getrgb(STANDARD_COLORS[get_index(track[0])])
-        cv2.rectangle(image, (xmin, ymin), (xmax, ymax), rgb, 2)
-        image = cv2.putText(
-        image, str(track[0]), (cx , cy),
-        cv2.FONT_HERSHEY_SIMPLEX, 1, rgb, 2, cv2.LINE_AA)
+        if track[3][0] == 'seen':
+            cx, cy = track[4][0]
+            rgb = ImageColor.getrgb(STANDARD_COLORS[get_index(track[0])])
+            cv2.rectangle(image, (xmin, ymin), (xmax, ymax), rgb, 2)
+            image = cv2.putText(
+            image, str(track[0]), (cx , cy),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, rgb, 2, cv2.LINE_AA)
 
 def visualize_crossroad_statistic(image, map):
     h, w, c = image.shape

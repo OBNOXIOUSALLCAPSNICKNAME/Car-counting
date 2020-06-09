@@ -197,22 +197,22 @@ def NMS(boxes, thres, return_indices=False):
 class Directions():
     def __init__(self):
         self.oktrev_lines = {
-            "top": [np.array([0, 0]), np.array([0, 0])],
-            "left": [np.array([0,0]), np.array([0,0])],
-            "bottom": [np.array([0,0]), np.array([0,0])],
-            "right": [np.array([0,0]), np.array([0,0])]
+            "top": [np.array([390, 280]), np.array([900, 255])],
+            "left": [np.array([242, 422]), np.array([375, 585])],
+            "bottom": [np.array([785, 695]), np.array([1360, 675])],
+            "right": [np.array([1530, 435]), np.array([1395, 345])]
         }
         self.lenina_lines = {
             "top": [np.array([800, 300]), np.array([910, 290])],
-            "left": [np.array([645,345]), np.array([710,535])],
-            "bottom": [np.array([1235,625]), np.array([1690,505])],
-            "right": [np.array([1630,370]), np.array([1485,325])]
+            "left": [np.array([645, 345]), np.array([710, 535])],
+            "bottom": [np.array([1235, 625]), np.array([1690, 505])],
+            "right": [np.array([1630, 370]), np.array([1485, 325])]
         }
         self.gavrilova_lines = {
-            "top": [np.array([0, 0]), np.array([0, 0])],
-            "left": [np.array([0,0]), np.array([0,0])],
-            "bottom": [np.array([0,0]), np.array([0,0])],
-            "right": [np.array([0,0]), np.array([0,0])]
+            "top": [np.array([10, 10]), np.array([10, 10])],
+            "left": [np.array([455, 565]), np.array([645, 750])],
+            "bottom": [np.array([1100, 720]), np.array([1300, 650])],
+            "right": [np.array([1360, 500]), np.array([1225, 465])]
         }
 
         self.CROSSROADS_MAP = {

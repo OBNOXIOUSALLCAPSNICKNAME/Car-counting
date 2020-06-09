@@ -5,7 +5,6 @@ import utils
 import json
 import time
 import math
-
 import numpy as np
 
 from collections import Counter
